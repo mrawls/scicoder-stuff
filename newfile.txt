@@ -1,2 +1,4 @@
 Here is a lovely new file that I am going to commit to git.
 It's going to be great.
+
+I wonder if I can sync and then commit later, or something.
