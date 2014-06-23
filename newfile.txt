@@ -1,0 +1,2 @@
+Here is a lovely new file that I am going to commit to git.
+It's going to be great.
