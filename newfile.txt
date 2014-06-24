@@ -1,4 +1,8 @@
 Here is a lovely new file that I am going to commit to git.
 It's going to be great.
 
-I wonder if I can sync and then commit later, or something.
+1. Edit a file like this one.
+2. "Commit" it to your local git repository.
+3. Sync ("push") it to the remote repository.
+4. Say someone else changes a file on the remote repository.
+4. Then you can sync ("pull") it to your local repository.
