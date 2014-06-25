@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS "city";
+CREATE TABLE "city" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "label" TEXT);
+DROP TABLE IF EXISTS "club";
+CREATE TABLE "club" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "label" TEXT);
+DROP TABLE IF EXISTS "status";
+CREATE TABLE "status" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "label" TEXT);
+DROP TABLE IF EXISTS "student";
+CREATE TABLE "student" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "first_name" TEXT, "last_name" TEXT, "city_id" INTEGER, "status_id" INTEGER, FOREIGN KEY("city_id") REFERENCES city(id), FOREIGN KEY("status_id") REFERENCES status(id));
+DROP TABLE IF EXISTS "student_to_club";
+CREATE TABLE "student_to_club" ("student_id" INTEGER NOT NULL , "club_id" INTEGER NOT NULL , PRIMARY KEY ("student_id", "club_id"), FOREIGN KEY("student_id") REFERENCES student(id), FOREIGN KEY("club_id") REFERENCES club(id));
+DROP TABLE IF EXISTS "student_to_supervisor";
+CREATE TABLE "student_to_supervisor" ("student_id" INTEGER NOT NULL , "supervisor_id" INTEGER NOT NULL , PRIMARY KEY ("student_id", "supervisor_id"), FOREIGN KEY("student_id") REFERENCES student(id), FOREIGN KEY("supervisor_id") REFERENCES supervisor(id));
+DROP TABLE IF EXISTS "supervisor";
+CREATE TABLE "supervisor" ("id" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL  UNIQUE , "first_name" TEXT, "last_name" TEXT, "room_number" TEXT);
